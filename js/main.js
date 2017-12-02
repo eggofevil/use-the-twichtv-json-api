@@ -18,7 +18,8 @@ function setUserInfo(streamsArray) {
             currentValue.className += ' online';
             currentValue.textContent = 'On\n Air';
           }
-          userDivStream.textContent = streamsArray[item].title + '.\n Lang: ' + streamsArray[item].language + '.\n Started at: ' + streamsArray[item].started_at;
+          var startTime = new Date(streamsArray[item].started_at.toString());
+          userDivStream.textContent = streamsArray[item].title + '.\n Lang: ' + streamsArray[item].language + '.\n Started at: ' + startTime.toLocaleString('ru-RU');
           break;
         }
         if (currentValue.classList.toString().indexOf('online') !== -1) {
